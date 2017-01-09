@@ -1,0 +1,23 @@
+%% Initialize Variables
+clear;
+
+%% 
+brickWall = imread('bricks.jpg');
+rotatedBrickWall = imread('bricksRotated.jpg');
+carpet = imread('carpet.jpg');
+
+figure
+imshow(brickWall)
+title('Bricks')
+
+figure
+imshow(rotatedBrickWall)
+title('Rotated Bricks')
+
+figure
+imshow(carpet)
+title('Carpet')
+
+lbpBricks1 = extractLBPFeatures(brickWall,'Upright',false);
+lbpBricks2 = extractLBPFeatures(rotatedBrickWall,'Upright',false);
+lbpCarpet = extractLBPFeatures(carpet,'Upright',false);
